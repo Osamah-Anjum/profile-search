@@ -2,6 +2,7 @@ import './App.css';
 import * as React from 'react';
 import { fakedata } from './MOCK_DATA';
 import { useTable } from 'react-table';
+import Summary from './components/summaryButton';
 
 const App = () => {
   const data = React.useMemo(() => fakedata, []);
@@ -25,6 +26,10 @@ const App = () => {
         accessor: "last_name",
       },
       {
+        Header: "Brief",
+        accessor: "brief",
+      },
+      {
         Header: "Adress",
         accessor: "adress",
       },
@@ -33,8 +38,8 @@ const App = () => {
         accessor: "gender",
       },
       {
-        Header: "Details",
-        accessor: (row) => <><button type='submit' style={{pointerEvents: "auto", border: "none", borderRadius: "20px", backgroundColor: "#c45454", color: "black", width: "7rem", height: "2rem"}}>Summarry</button></>
+        Header: "Location",
+        accessor: (row) => <><Summary /></>
       }
     ],
     []
