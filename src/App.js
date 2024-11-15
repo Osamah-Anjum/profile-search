@@ -1,25 +1,78 @@
-import logo from './logo.svg';
 import './App.css';
+import * as React from 'react';
+import { fakedata } from './MOCK_DATA';
+import { useTable } from 'react-table';
 
-function App() {
+const App = () => {
+  const data = React.useMemo(() => fakedata, []);
+
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "ID",
+        accessor: "id",
+      },
+      {
+        Header: "Photo",
+        accessor: (row) => <img width={60} height={60} style={{borderRadius: "50px"}} src={row.photo} alt='' />,
+      },
+      {
+        Header: "First Name",
+        accessor: "first_name",
+      },
+      {
+        Header: "Last Name",
+        accessor: "last_name",
+      },
+      {
+        Header: "Adress",
+        accessor: "adress",
+      },
+      {
+        Header: "Gender",
+        accessor: "gender",
+      },
+      {
+        Header: "Details",
+        accessor: (row) => <><button type='submit' style={{pointerEvents: "auto", border: "none", borderRadius: "20px", backgroundColor: "#c45454", color: "black", width: "7rem", height: "2rem"}}>Summarry</button></>
+      }
+    ],
+    []
+  );
+
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ columns, data });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className="container">
+        <table {...getTableProps()}>
+          <thead >
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th {...column.getHeaderProps()}>
+                    {column.render("Header")}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,10 @@
+export const fakedata = [{"id":1,"photo":"https://xsgames.co/randomusers/assets/avatars/female/5.jpg","first_name":"Cornelia","last_name":"Bourner","gender":"Female","adress":"982 Fremont Street"},
+  {"id":2,"photo":"https://xsgames.co/randomusers/assets/avatars/male/64.jpg","first_name":"Thatch","last_name":"Gaitone","gender":"Male","adress":"16256 Blaine Terrace"},
+  {"id":3,"photo":"https://xsgames.co/randomusers/assets/avatars/female/69.jpg","first_name":"Stesha","last_name":"Lamplough","gender":"Female","adress":"04382 International Road"},
+  {"id":4,"photo":"https://xsgames.co/randomusers/assets/avatars/female/16.jpg","first_name":"Garfield","last_name":"Jellings","gender":"Genderfluid","adress":"94 Basil Trail"},
+  {"id":5,"photo":"https://xsgames.co/randomusers/assets/avatars/male/48.jpg","first_name":"Graeme","last_name":"Mauchlen","gender":"Male","adress":"72 Warrior Point"},
+  {"id":6,"photo":"https://xsgames.co/randomusers/assets/avatars/female/44.jpg","first_name":"Vivienne","last_name":"Greatorex","gender":"Female","adress":"99366 Sutteridge Park"},
+  {"id":7,"photo":"https://xsgames.co/randomusers/assets/avatars/female/49.jpg","first_name":"Pamelina","last_name":"Bowmer","gender":"Female","adress":"027 Cardinal Way"},
+  {"id":8,"photo":"https://xsgames.co/randomusers/assets/avatars/male/0.jpg","first_name":"Karalynn","last_name":"Outerbridge","gender":"Female","adress":"17 Hanover Lane"},
+  {"id":9,"photo":"https://xsgames.co/randomusers/assets/avatars/male/73.jpg","first_name":"Thorsten","last_name":"Finlason","gender":"Male","adress":"7 Karstens Circle"},
+  {"id":10,"photo":"https://xsgames.co/randomusers/assets/avatars/male/10.jpg","first_name":"Bentlee","last_name":"Van Brug","gender":"Male","adress":"100 Erie Drive"}]
